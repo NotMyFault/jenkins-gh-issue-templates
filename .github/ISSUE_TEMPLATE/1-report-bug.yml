@@ -8,13 +8,11 @@ body:
       value: |
         **Never report security issues on GitHub or other public channels (Gitter/Twitter/etc.)**
         Follow these instruction to report security issues: https://www.jenkins.io/security/#reporting-vulnerabilities
-
   - type: textarea
     attributes:
       label: Jenkins and plugins versions report
       description: |
         For easier bug reporting, you can get the full list of plugins with this Groovy script that you can run in **Jenkins > Manage Jenkins > Script Console**:
-        Considering the following is a rather large wall of text, you can use paste services like https://gist.github.com/ to share the output.
         ```groovy
         println("Jenkins: ${Jenkins.instance.getVersion()}")
         println("OS: ${System.getProperty('os.name')} - ${System.getProperty('os.version')}")
@@ -41,6 +39,14 @@ body:
         bootstrap5-api:5.1.3-4
         bouncycastle-api:2.25
         ...
+      value: |
+        <details>
+          <summary>Environment</summary>
+          <!-- Paste your environment details below the ```text line -->
+          ```text
+          Past the output right here
+          ```
+        </details>
     validations:
       required: true
 
@@ -60,8 +66,8 @@ body:
         Use screenshots where appropriate, copy textual output otherwise. When in doubt, do both.
         Include relevant logs, debug if needed - https://www.jenkins.io/doc/book/system-administration/viewing-logs/
       placeholder: |
-        - Step 1: ...
-        - Step 2: ...
+        1. Step 1: ...
+        2. Step 2: ...
     validations:
       required: true
 
